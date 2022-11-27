@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-0</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background: black;
+        }
+        
+        .main {
+            transform: translate(-50%, -50%);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+        
+        h1 {
+            color: blue;
+            margin: 20px;
+        }
+        
+        .cell {
+            padding: 50px;
+            cursor: pointer;
+        }
+        
+        .container {
+            display: grid;
+            color: red;
+            grid-template-columns: repeat(3, auto);
+            width: 450px;
+            box-align: center;
+        }
+        
+        .cell1 {
+            border-right: blue solid;
+            border-bottom: blue solid;
+        }
+        
+        .cell2 {
+            border-right: blue solid;
+            border-bottom: blue solid;
+            border-left: blue solid;
+        }
+        
+        .cell3 {
+            border-left: blue solid;
+            border-bottom: blue solid;
+        }
+        
+        .cell4 {
+            border-right: blue solid;
+            border-bottom: blue solid;
+            border-top: blue solid;
+        }
+        
+        .cell5 {
+            border: blue solid;
+        }
+        
+        .cell6 {
+            border-left: blue solid;
+            border-bottom: blue solid;
+            border-top: blue solid;
+        }
+        
+        .cell7 {
+            border-right: blue solid;
+            border-top: blue solid;
+        }
+        
+        .cell8 {
+            border-right: blue solid;
+            border-left: blue solid;
+            border-top: blue solid;
+        }
+        
+        .cell9 {
+            border-left: blue solid;
+            border-top: blue solid;
+        }
+        
+        button {
+            padding: 20px;
+            background: red;
+            color: rgb(0, 255, 55);
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        
+        .in {
+            font-size: 0px;
+        }
+        
+        button:hover {
+            box-shadow: 2px 2px 22px 2px rgb(241, 32, 77);
+        }
+    </style>
+    <script src="JQuery/Jquery file/jquery-3.6.1.min.js" charset="utf-8"></script>
+    <script>
+        function restore() {
+            $(".cell").html(" ");
+        }
+        $(document).ready(function() {
+            var turn = 1;
+            $(".cell").click(function() {
+                if (turn == 1) {
+                    $(this).html("x")
+                    $("#status").text("Player 2 Tuen");
+                    $("#status").css("color", "red");
+                    $(this).css("font-size", "30px");
+                    turn = 2;
+                } else {
+                    $(this).html("o")
+                    $(this).css("font-size", "30px");
+                    $("#status").text("Player 1 Turn");
+                    $("#status").css("color", "red");
+                    turn = 1;
+                }
+
+                // $(".cell").click(function() {
+                //     if ($(this).has(html("x")) || $(this).has(html("o"))) {
+                //         $(this).css("background-color", "green");
+                //         setTimeout(() => {
+                //             $(this).css("background-color", "green");
+                //         }, 800);
+                //     }
+                // })
+
+                // <!-- Function to check the winning move -->
+                // function run() {
+                //     if ($(".t1").text("x") &&
+                //         $(".t2").text("x") &&
+                //         $(".t3").text("x")) {
+                //         $(".t1").css("color", "green");
+                //         $(".t2").css("color", "green");
+                //         $(".t3").css("color", "green");
+                //         return true;
+                //     } else if ($(".cell4").html("x") &&
+                //         $(".cell5").html("x") &&
+                //         $(".cell6").html("x")) {
+                //         $(".cell4").css("color", "green");
+                //         $(".cell5").css("color", "green");
+                //         $(".cell6").css("color", "green");
+                //         return true;
+                //     } else if ($(".cell7").html("x") &&
+                //         $(".cell8").html("x") &&
+                //         $(".cell9").html("x")) {
+                //         $(".cell7").css("color", "green");
+                //         $(".cell8").css("color", "green");
+                //         $(".cell9").css("color", "green");
+                //         return true;
+                //     } else if ($(".cell1").html("x") &&
+                //         $(".cell4").html("x") &&
+                //         $(".cell7").html("x")) {
+                //         $(".cell1").css("color", "green");
+                //         $(".cell4").css("color", "green");
+                //         $(".cell7").css("color", "green");
+                //         return true;
+                //     } else if ($(".cell2").html("x") &&
+                //         $(".cell5").html("x") &&
+                //         $(".cell8").html("x")) {
+                //         $(".cell2").css("color", "green");
+                //         $(".cell5").css("color", "green");
+                //         $(".cell8").css("color", "green");
+                //         return true;
+                //     } else if ($(".cell3").html("x") &&
+                //         $(".cell6").html("x") &&
+                //         $(".cell9").html("x")) {
+                //         $(".cell3").css("color", "green");
+                //         $(".cell6").css("color", "green");
+                //         $(".cell9").css("color", "green");
+                //         return true;
+                //     } else if ($(".cell1").html("x") &&
+                //         $(".cell5").html("x") &&
+                //         $(".cell9").html("x")) {
+                //         $(".cell1").css("color", "green");
+                //         $(".cell5").css("color", "green");
+                //         $(".cell9").css("color", "green");
+                //         return true;
+                //     } else if ($(".cell3").html("x") &&
+                //         $(".cell5").html("x") &&
+                //         $(".cell7").html("x")) {
+                //         $(".cell3").css("color", "green");
+                //         $(".cell5").css("color", "green");
+                //         $(".cell7").css("color", "green");
+                //         return true;
+                //     } else {
+                //         return false;
+                //     }
+                // }
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <h1>X-0 Game</h1>
+        <br><br><br>
+        <div class="container">
+            <div class="cell cell1" onclick="fun();">
+                <p class="in t1"></p>
+            </div>
+            <div class="cell cell2" onclick="fun();">
+                <p class="in t2"></p>
+            </div>
+            <div class="cell cell3" onclick="fun();">
+                <p class="in t3"></p>
+            </div>
+            <div class="cell cell4" onclick="fun();">
+                <p class="in t4"></p>
+            </div>
+            <div class="cell cell5" onclick="fun();">
+                <p class="in t5"></p>
+            </div>
+            <div class="cell cell6" onclick="fun();">
+                <p class="in t6"></p>
+            </div>
+            <div class="cell cell7" onclick="fun();">
+                <p class="in t7"></p>
+            </div>
+            <div class="cell cell8" onclick="fun();">
+                <p class="in t8"></p>
+            </div>
+            <div class="cell cell9" onclick="fun();">
+                <p class="in t9"></p>
+            </div>
+        </div>
+        <br><br><br>
+        <h2 id="status">Player 1 Turn</h2>
+        <br><br>
+        <button onclick="restore();">Restart Game</button>
+    </div>
+</body>
+
+</html>
