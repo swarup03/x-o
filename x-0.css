@@ -1,0 +1,94 @@
+body {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background: black;
+}
+
+.main {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+h1 {
+    color: blue;
+    margin: 20px;
+}
+
+.cell {
+    padding: 50px;
+    cursor: pointer;
+}
+
+.container {
+    display: grid;
+    color: red;
+    grid-template-columns: repeat(3, auto);
+    width: 450px;
+    box-align: center;
+}
+
+.cell1 {
+    border-right: blue solid;
+    border-bottom: blue solid;
+}
+
+.cell2 {
+    border-right: blue solid;
+    border-bottom: blue solid;
+    border-left: blue solid;
+}
+
+.cell3 {
+    border-left: blue solid;
+    border-bottom: blue solid;
+}
+
+.cell4 {
+    border-right: blue solid;
+    border-bottom: blue solid;
+    border-top: blue solid;
+}
+
+.cell5 {
+    border: blue solid;
+}
+
+.cell6 {
+    border-left: blue solid;
+    border-bottom: blue solid;
+    border-top: blue solid;
+}
+
+.cell7 {
+    border-right: blue solid;
+    border-top: blue solid;
+}
+
+.cell8 {
+    border-right: blue solid;
+    border-left: blue solid;
+    border-top: blue solid;
+}
+
+.cell9 {
+    border-left: blue solid;
+    border-top: blue solid;
+}
+
+button {
+    padding: 20px;
+    background: red;
+    color: rgb(0, 255, 55);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.in {
+    font-size: 0px;
+}
+
+button:hover {
+    box-shadow: 2px 2px 22px 2px rgb(241, 32, 77);
+}
